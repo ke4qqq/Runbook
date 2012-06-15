@@ -5,14 +5,14 @@
 ]>
 <bookinfo id="book-Runbook-Runbook">
 	<title>Runbook</title>
-	<subtitle>short description</subtitle>
+	<subtitle>Prescriptive instructions for deploying CloudStack</subtitle>
 	<productname>CloudStack</productname>
 	<productnumber>3.0.2</productnumber>
 	<edition>0</edition>
 	<pubsnumber>0</pubsnumber>
 	<abstract>
 		<para>
-			A short overview and summary of the book's subject and purpose, traditionally no more than one paragraph long. Note: the abstract will appear in the front matter of your book and will also be placed in the description field of the book's RPM spec file.
+			These runbooks are designed to provide a strict environment to guarantee a higher degree of success in initial deployments of CloudStack. All of the elements of the environment will be provided to you. CloudStack is completely capable of more complex configurations, but they are beyond the scope of this document.
 		</para>
 	</abstract>
 	<corpauthor>
