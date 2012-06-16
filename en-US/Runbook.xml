@@ -3,11 +3,12 @@
 <!ENTITY % BOOK_ENTITIES SYSTEM "Runbook.ent">
 %BOOK_ENTITIES;
 ]>
-<book>
+<book status="draft">
 	<xi:include href="Book_Info.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="Preface.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="Overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
         <xi:include href="Environment.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="Management.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<xi:include href="Revision_History.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 	<index />
 </book>
