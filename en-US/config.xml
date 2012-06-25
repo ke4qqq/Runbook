@@ -109,7 +109,7 @@
       <para> You should be prompted to add the first host to your cluster at this point. Only a few bits of information are needed. 
         <orderedlist>
           <listitem>
-             <para>Hostname - we'll use the IP address <replaceable>172.16.10.</replaceable>2 since we didn't set up a DNS server.<para>
+             <para>Hostname - we'll use the IP address <replaceable>172.16.10.</replaceable>2 since we didn't set up a DNS server.</para>
           </listitem>
           <listitem>
              <para>Username - we'll use 'root' </para>
@@ -138,7 +138,7 @@
             <para>NFS server - We'll use the IP address <replaceable>172.16.10.</replaceable>2</para>
           </listitem>
           <listitem>
-            <para>Path - We'll use /secondary<para>
+            <para>Path - We'll use /secondary</para>
           </listitem>
         </orderedlist>
       </para>
