@@ -4,7 +4,7 @@
 %BOOK_ENTITIES;
 ]>
 <chapter id="chap-Runbook-Config">
-  <title>Test Chapter</title>
+  <title>Configuration</title>
   <para>
     As we noted before we will be using security groups to provide isolation
     and by default that implies that we'll be using a flat layer-2 network. 
@@ -94,6 +94,9 @@
           </listitem>
         </orderedlist>
       </para>
+    </section>
+    <section id="Runbook-config-cluster">
+      <title>Cluster</title>
       <para> Now that we've added a Zone, we need only add a few more items for configuring the cluster. 
         <orderedlist>
           <listitem>
@@ -122,6 +125,8 @@
           </listitem>
         </orderedlist>
       </para>
+      <section id="Runbook-config-cluster-pristorage">
+        <title>Primary Storage</title> 
       <para>With you cluster now setup - you should be prompted for primary storage information. Choose NFS as the storage type and then enter the following values in the fields:
         <orderedlist>
           <listitem>
@@ -132,6 +137,9 @@
           </listitem>
         </orderedlist>
       </para>
+      </section>
+      <section id="Runbook-config-cluster-secstorage">
+        <title>Secondary Storage</title>
       <para> If this is a new zone, you'll be prompted for secondary storage information - populate it as follows:
         <orderedlist>
           <listitem>
@@ -143,7 +151,9 @@
         </orderedlist>
       </para>
       <para> Now, click Launch and your cloud should begin setup - it may take several minutes depending on your internet connection speed for setup to finalize.</para>
-    </section>  
+    </section>
+    </section>
+  
 
 </chapter>
 

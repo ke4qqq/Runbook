@@ -28,7 +28,7 @@
         will need to configure it to work in your environment. Since we 
         specified that there will be no DHCP server in this environment
         we will be manually configuring your network interface. We will
-        assume for the purposes of this exercise that eth0 is the only network
+        assume, for the purposes of this exercise, that eth0 is the only network
         interface that will be connected and used. 
       </para>
       <para>
@@ -78,8 +78,8 @@ GATEWAY=172.16.10.1
       </important>
       <para> Now that we have the configuration files properly set up, we need to run a
       few commands to start up the network</para>
-      <screen><prompt># </prompt><userinput><command>chkconfig</command>network on</userinput></screen>
-      <screen><prompt># </prompt><userinput><command>service</command>network start</userinput></screen>
+      <screen><prompt># </prompt><userinput><command>chkconfig</command> network on</userinput></screen>
+      <screen><prompt># </prompt><userinput><command>service</command> network start</userinput></screen>
       <para>This should bring the network up successfully, but we now need to enable name resolution.
       To do that we will edit <filename>/etc/resolv.conf</filename>. These instructions will add
       one of the nameservers from Google, though you are free to add a local nameserver if you wish. 
