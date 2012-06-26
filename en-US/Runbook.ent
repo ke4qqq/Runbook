@@ -1,4 +1,4 @@
-<!ENTITY PRODUCT "CloudStack">
+<!ENTITY PRODUCT "Apache CloudStack">
 <!ENTITY BOOKID "Runbook">
 <!ENTITY YEAR "2012">
-<!ENTITY HOLDER "| You need to change the HOLDER entity in the en-US/Runbook.ent file |">
+<!ENTITY HOLDER "Apache Software Foundation">

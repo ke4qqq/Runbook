@@ -5,13 +5,8 @@
 ]>
 <authorgroup>
 	<author>
-		<firstname>Dude</firstname>
-		<surname>McPants</surname>
-		<affiliation>
-			<orgname>Somewhere</orgname>
-			<orgdiv>Someone</orgdiv>
-		</affiliation>
-		<email>Dude.McPants@example.com</email>
+		<firstname>Apache</firstname>
+		<surname>CloudStack</surname>
 	</author>
 </authorgroup>
 

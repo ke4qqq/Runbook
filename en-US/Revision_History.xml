@@ -9,12 +9,7 @@
 		<revhistory>
 			<revision>
 				<revnumber>0-0</revnumber>
-				<date>Fri May 25 2012</date>
-				<author>
-					<firstname>Dude</firstname>
-					<surname>McPants</surname>
-					<email>Dude.McPants@example.com</email>
-				</author>
+				<date>Mon Jun 25 2012</date>
 				<revdescription>
 					<simplelist>
 						<member>Initial creation of book by publican</member>
