@@ -6,8 +6,8 @@
 <chapter id="chap-Runbook-Environment">
   <title>Environment</title>
   <para>
-    There are a number of things that need preparation about your environment
-    before we install CloudStack. We'll go over those now. 
+      Before you begin, you need to prepare the environment before you install CloudStack. 
+      We will go over the steps to prepare now.
   </para>
   <section id="sect-Runbook-Environment-operatingsys">
     <title>Operating System</title>
@@ -17,7 +17,9 @@
     </para>
     <para>
       Once this installation is complete, you'll want to connect to your freshly
-      installed machine via ssh as the root user. 
+      installed machine via SSH as the root user. Note that you should not allow root 
+      logins in a production environment, so be sure to turn off remote logins once you 
+      have finished the installation and configuration.
     </para>
     <section id="sect-Runbook-Environment-operatingsys-network">
       <title>Configuring the network</title>
@@ -26,13 +28,13 @@
         will need to configure it to work in your environment. Since we 
         specified that there will be no DHCP server in this environment
         we will be manually configuring your network interface. We will
-        for the purposes of this exercise that eth0 is the only network
+        assume for the purposes of this exercise that eth0 is the only network
         interface that will be connected and used. 
       </para>
       <para>
         Connecting via the console you should login as root. Check the 
-        file <filename>/etc/sysconfig/network-scripts/ifcfg-eth0</filename>
-        and it should have content similar to below:
+        file <filename>/etc/sysconfig/network-scripts/ifcfg-eth0</filename>,
+        it will look like this by default:
         <screen>
 DEVICE="eth0"
 HWADDR="52:54:00:B9:A6:C0"
@@ -41,9 +43,10 @@ ONBOOT="no"
         </screen>
       </para>
       <para>
-        Unfortunately the above will not permit you to connect to the network
+        Unfortunately, this configuration will not permit you to connect to the network,
         and is also unsuitable for our purposes with CloudStack. We want to 
-        configure that file such that it contains content similar to the below.
+	configure that file so that it specifies the IP address, netmask, etc., as shown
+	in the following example:
       </para>
       <screen>
 DEVICE=eth0
@@ -68,8 +71,9 @@ GATEWAY=172.16.10.1
       </note>
       <important>
         <title>Hardware Addresses</title>
-        <para>You should not use the hardware address (aka MAC address) from the above 
-        file from. It is network interface specific and should stay the same. 
+	<para>You should not use the hardware address (aka MAC address) from our example
+	    for your configuration. It is network interface specific, so you should keep the 
+	    address already provided in the HWADDR directive.
         </para>
       </important>
       <para> Now that we have the configuration files properly set up, we need to run a
@@ -77,7 +81,7 @@ GATEWAY=172.16.10.1
       <screen><prompt># </prompt><userinput><command>chkconfig</command>network on</userinput></screen>
       <screen><prompt># </prompt><userinput><command>service</command>network start</userinput></screen>
       <para>This should bring the network up successfully, but we now need to enable name resolution.
-      To do that we will edit the <filename>/etc/resolv.conf</filename>. These instructions will add
+      To do that we will edit <filename>/etc/resolv.conf</filename>. These instructions will add
       one of the nameservers from Google, though you are free to add a local nameserver if you wish. 
       Your <filename>/etc/resolv.conf</filename> should modified to look like:
       </para>
@@ -96,12 +100,12 @@ nameserver 8.8.8.8
         <para>At this point it will likely return:</para>
         <screen>localhost</screen>
         <para>To rectify this situation - we'll set the hostname by editing the
-        <filename>/etc/hosts</filename> file so that it looks like:<screen>
+        <filename>/etc/hosts</filename> file so that it follows a similar format to this example:<screen>
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 172.16.10.2 srvr1.cloud.priv
 </screen>
         </para>
-        <para>After you've modified that file - go ahead and restart the network using:</para>
+        <para>After you've modified that file, go ahead and restart the network using:</para>
 <screen><prompt># </prompt><userinput><command>service</command> network restart</userinput></screen>
         <para>Now recheck with the <command>hostname --fqdn</command> command and ensure that it returns 
         a FQDN response</para>
@@ -112,13 +116,13 @@ nameserver 8.8.8.8
       set to permissive. We want to both configure this for future boots and modify it
       in the current running system.
       </para>
-      <para>To configure SELinux to be permissive in the running system we need to issue
+      <para>To configure SELinux to be permissive in the running system we need to run 
       the following command:</para>
       <screen><prompt># </prompt><userinput><command>setenforce</command> 0</userinput></screen>
       <para> 
         To ensure that it remains in that state we need to configure the file 
-        <filename>/etc/selinux/config</filename> to reflect the permissive state. 
-        It should look as follows: </para>
+        <filename>/etc/selinux/config</filename> to reflect the permissive state, 
+	as shown in this example: </para>
       <screen>
 
 # This file controls the state of SELinux on the system.
@@ -178,7 +182,7 @@ SELINUXTYPE=targeted
     In our case, the domain is cloud.priv, so ensure that the domain setting in <filename>/etc/idmapd.conf</filename>
     is uncommented and set as follows:</para>
     <screen>Domain = cloud.priv</screen>
-    <para>Now you'll need uncomment the below configuration values in the file <filename>/etc/sysconfig/nfs</filename></para>
+    <para>Now you'll need uncomment the configuration values in the file <filename>/etc/sysconfig/nfs</filename></para>
     <screen>
 LOCKD_TCPPORT=32803
 LOCKD_UDPPORT=32769
@@ -218,4 +222,3 @@ STATD_OUTGOING_PORT=2020
 
 
 </chapter>
-
