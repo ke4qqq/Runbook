@@ -12,7 +12,7 @@
 	<pubsnumber>0</pubsnumber>
 	<abstract>
 		<para>
-			These runbooks are designed to provide a strict environment to guarantee a higher degree of success in initial deployments of CloudStack. All of the elements of the environment will be provided to you. CloudStack is completely capable of more complex configurations, but they are beyond the scope of this document.
+			These runbooks are designed to provide a strict environment to guarantee a higher degree of success in initial deployments of CloudStack. All of the elements of the environment will be provided to you. CloudStack is capable of much more complex configurations, but they are beyond the scope of this document.
 		</para>
 	</abstract>
 	<corpauthor>
