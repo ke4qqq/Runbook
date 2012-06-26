@@ -17,7 +17,7 @@
       </para>
       <para>
         To install <application>MySQL</application> run the following command:
-        <screen><prompt># </prompt><userinput><command>yum</command>-y install mysql-server</userinput></screen>
+        <screen><prompt># </prompt><userinput><command>yum</command> -y install mysql-server</userinput></screen>
       </para>
       <para>With <application>MySQL</application> installed we need to make
       a few configuration changes to <filename>/etc/my.cnf</filename>. 
